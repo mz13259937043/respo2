@@ -1,0 +1,21 @@
+package com.mao.pro.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.mao.pro.mappers.AccountMapper;
+import com.mao.pro.model.Account;
+
+@Service("accountMapper")
+public class AccountServiceImpl implements AccountService {
+
+	@Autowired
+	private AccountMapper accountMapper;
+	
+	
+	@Override
+	public Account login(String username, String password) {
+		return accountMapper.login(username,password);
+	}
+
+}

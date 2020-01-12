@@ -1,0 +1,30 @@
+package com.mao.pro.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.mao.pro.mappers.AccountMapper;
+import com.mao.pro.model.Account;
+
+@Service("accountService")
+public class AccountServiceImpl implements AccountService {
+
+	@Autowired
+	private AccountMapper accountMapper;
+	
+	
+	@Override
+	public Account login(String username, String password) {
+		System.out.println(username+";"+password);
+		Account a1=null;
+		try {
+			a1 = accountMapper.login(username, password);
+			System.out.println("登陆成功——"+username+":"+password);
+		} catch (Exception e) {
+			System.out.println("登陆失败");
+			e.printStackTrace();
+		}
+		return a1;
+	}
+
+}

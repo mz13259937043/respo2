@@ -1,0 +1,9 @@
+package com.mao.pro.mapper;
+
+import com.mao.pro.model.Account;
+
+public interface AccountMapper {
+
+	Account login(String username, String password);
+
+}

@@ -1,0 +1,48 @@
+package com.mao.pro.controller;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.mao.pro.model.Account;
+import com.mao.pro.service.AccountService;
+
+@Controller
+@RequestMapping("/index")
+public class IndexController {
+	
+	@Resource
+	private AccountService accountService;
+	
+	@RequestMapping("/login")
+	@ResponseBody
+	public Account login(String username,String password) {
+		System.out.println("-----------------登陆----------------");
+		System.out.println(username+":"+password);
+		Account a1;
+		try {
+			a1 = accountService.login(username,password);
+			System.out.println("登陆成功");
+		} catch (Exception e) {
+			System.out.println("登陆失败");
+			e.printStackTrace();
+		}
+		return a1;
+	}
+	@RequestMapping("/regist")
+	public void regist() {
+		System.out.println("-----------------注册----------------");
+		Account a1 = new Account();
+		a1.setUsername("maozhan");
+		a1.setPassword("123456");
+		a1.setEmail("123@");
+	}
+	@RequestMapping("/exit")
+	public void exit() {
+		System.out.println("-----------------退出----------------");
+		
+	}
+	
+}

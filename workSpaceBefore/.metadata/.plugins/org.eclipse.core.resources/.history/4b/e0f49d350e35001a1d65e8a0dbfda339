@@ -1,0 +1,11 @@
+package com.mao.pro.utils;
+
+import javax.servlet.http.HttpSession;
+
+public class SessionUtil {
+
+	public void getUserSession(HttpSession session) {
+		
+	}
+	
+}

@@ -1,0 +1,17 @@
+package com.mao.pro.mappers;
+
+import org.apache.ibatis.annotations.Select;
+
+import com.mao.pro.model.Account;
+
+public interface AccountMapper {
+
+	@Select("select * from account where username like ? and password = ?")
+	Account login(String username, String password);
+	
+	@Select("select * from account")
+	Account sele ();
+
+	int regist(Account a1);
+
+}

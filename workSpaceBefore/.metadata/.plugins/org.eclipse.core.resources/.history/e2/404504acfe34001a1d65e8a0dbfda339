@@ -1,0 +1,12 @@
+package com.mao.pro.service;
+
+import com.mao.pro.model.Account;
+
+public class AccountServiceImpl implements AccountService {
+
+	@Override
+	public Account login(String username, String password) {
+		return null;
+	}
+
+}
